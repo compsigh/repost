@@ -2,6 +2,8 @@
   --font-sans: var(--font-inter), sans-serif;
   --color-black: #141414;
   --color-white: #f5f5f5;
+  --color-compost: #00C774;
+  --color-recycle: #2A88EC;
 }
 
 * {
@@ -77,3 +79,46 @@ input {
   border: 1px solid var(--color-gray);
   border-radius: 8px;
 }
+/* recycle button  */
+button {
+  padding: 0.5em 1em;
+  outline: 2px #141414;
+  background-color: #d5d5d5;
+  font-family: var(--font-sans);
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  border-color: #141414;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #373535;
+  transform: scale(0.95);
+}
+
+button.tSelected {
+  background-color: #14141445;
+}
+
+button.recycle {
+  background-color: var(--color-recycle);
+}
+
+button.recycle:active {
+  background-color: var(--color-recycle);
+  transform: scale(0.95);
+}
+
+button.compost {
+  background-color: var(--color-compost);
+}
+
+button.compost:active {
+  background-color: var(--color-compost);
+  transform: scale(0.95);
+}
+
+/* button.cSelected {
+  background-color: var(#00c77445);
+} */
