@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -11,7 +11,17 @@ else metadataBase = new URL(`http://localhost:${process.env.PORT || 3000}`)
 export const metadata: Metadata = {
   metadataBase,
   title: 're/post',
-  description: 'Quickly identify compostability and/or recyclability with AI'
+  description: 'Quickly identify compostability and/or recyclability with AI',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    title: 'Repost',
+    capable: true,
+    statusBarStyle: 'default'
+  }
+}
+
+export const viewport: Viewport = {
+  themeColor: '#FFFFFF'
 }
 
 export default function RootLayout({
