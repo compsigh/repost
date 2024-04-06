@@ -1,5 +1,5 @@
 import { ImageUploader } from '@/components/ImageUploader'
-import { RecepticleSelector } from '@/components/RecepticleSelector'
+import { ReceptacleSelector } from '@/components/ReceptacleSelector'
 import { list } from '@vercel/blob'
 
 export default async function Home() {
@@ -8,7 +8,7 @@ export default async function Home() {
     <>
       <h1>How to deploy to production on Vercel 😃</h1>
       <ImageUploader />
-      <RecepticleSelector />
+      <ReceptacleSelector />
       {response.blobs.map((blob) => (
         <a key={blob.pathname} href={blob.downloadUrl}>
           {blob.pathname}
