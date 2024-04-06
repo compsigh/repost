@@ -16,6 +16,11 @@
 # production
 /build
 
+# pwa
+**/public/workbox-*
+**/public/sw*
+**/public/worker*
+
 # misc
 .DS_Store
 *.pem
