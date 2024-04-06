@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Work_Sans } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const workSans = Work_Sans({ subsets: ['latin'], variable: '--font-work-sans' })
 
 let metadataBase: URL
 if (process.env.VERCEL_URL) metadataBase = new URL('https://repost.compsigh.club')
@@ -32,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable}`}
+      className={`${inter.variable} ${workSans.variable}`}
     >
       <body>{children}</body>
     </html>
