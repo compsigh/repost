@@ -7,7 +7,6 @@ export default async function Home() {
   console.log(response)
   return (
     <>
-      <h1>How to deploy to production on Vercel 😃</h1>
       <ImageUploader />
       <ReceptacleSelector />
       {response.blobs.map((blob) => (

@@ -33,23 +33,24 @@ export function ReceptacleSelector() {
         id='trash'
         onClick={() => handleButtonClick('trash')}
       >
-        <Image src={TrashBin} alt="Trash Bin"/>
+        <Image src={TrashBin} alt="Trash Bin" width={45} height={65}/>
+
       </button>
-      <br />
+
       <button
         id='compost'
         onClick={() => handleButtonClick('compost')}
       >
-        <Image src={CompostBin} alt="Compost Bin"/>
+        <Image src={CompostBin} alt="Compost Bin" width={45} height={65}/>
       </button>
-      <br />
+
       <button
         id='recycle'
         onClick={() => handleButtonClick('recycle')}
       >
-        <Image src={RecycleBin} alt="Recycle Bin"/>
+        <Image src={RecycleBin} alt="Recycle Bin" width={45} height={65}/>
       </button>
-      <br />
+
       <p>State:</p>
       <pre>{JSON.stringify(selectedReceptacles, null, 2)}</pre>
     </>
