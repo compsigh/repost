@@ -5,10 +5,22 @@ const openai = new OpenAI()
 export async function getVisionResponse(imageUrl: string) {
   const response = await openai.chat.completions.create({
     model: 'gpt-4-vision-preview',
+    temperature: 0.2,
     messages: [
       {
         role: 'system',
-        content: 'You are a helpful program that assists users in identifying the compostability and recyclability of the objects in their images. If it does not look like trash, say you are unsure. You must respond to the user in JSON format. The first object, named Receptacle, should contain which of the three receptacles that the trash belongs in: the trash, compost, or recycle. If it belongs in more than one, comma separate the receptacle. The second object, named Disposal, contains a step by step way of decomposition instructions as necessary based on the type of receptacles(s) given. The third object, named Repost, contains alternate ways the user can reuse or utilize that trash for other activities.'
+        content: `You are a helpful program that assists users in identifying in which receptacle objects in their images should go. Here are your heuristics:
+
+Respond in JSON format, conforming to the following schema:
+{
+  "receptacle": "trash" | "compost" | "recycle",
+  "reasoning": string,
+  "instructions": string
+}
+
+  - Choose your best guess for the receptacle. If you are unsure, answer with "trash" and provide reasoning.
+  - Provide a one-sentence reasoning for your choice.
+  - If the object in the user's image requires special instructions for disposal, provide them in the "instructions" field.`
       },
       {
         role: 'user',
@@ -24,11 +36,13 @@ export async function getVisionResponse(imageUrl: string) {
     ]
   })
 
-  let JSON_response: string = response.choices[0].message.content ?? ''
-  JSON_response = JSON_response.slice(7)
-  JSON_response = JSON_response.slice(0, -3)
-  const parsed_response = JSON.parse(JSON_response)
-  console.log(parsed_response)
+  let jsonResponse = response.choices[0].message.content
+                     ?.slice(7)
+                     ?.slice(0, -3)
+  if (!jsonResponse)
+    return { message: 'Sorry, there was an issue with your request.' }
 
-  return { message: response.choices[0].message.content }
+  const parsedResponse = JSON.parse(jsonResponse)
+
+  return { message: parsedResponse }
 }
