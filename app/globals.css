@@ -4,6 +4,7 @@
   --color-white: #ffffff;
   --color-compost: #00C774;
   --color-recycle: #2A88EC;
+  --font-family: var(--font-sans);
 }
 
 * {
@@ -19,6 +20,7 @@ body {
   max-width: 650px;
   line-height: 1.6;
   font-size: 1.125rem;
+  font-family: var(--font-family);
 }
 
 @media (max-width: 700px) {
