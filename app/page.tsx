@@ -11,7 +11,7 @@ export default async function Home() {
       <ReceptacleSelector />
       <LoadingBar />
       {response.blobs.map((blob) => (
-        <a key={blob.pathname} href={blob.downloadUrl}>
+        <a key={blob.downloadUrl} href={blob.downloadUrl}>
           {blob.pathname}
         </a>
       ))}
