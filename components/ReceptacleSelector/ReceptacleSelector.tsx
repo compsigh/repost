@@ -16,8 +16,10 @@ export function ReceptacleSelector() {
   function handleButtonClick(type) {
     if (!selectedReceptacles[type]) {
       document.getElementById(type)?.classList.add('selected')
+      document.getElementById('bar')?.classList.add(type)
     } else {
       document.getElementById(type)?.classList.remove('selected')
+      document.getElementById('bar')?.classList.remove(type)
     }
     setSelectedReceptacles({
       ...selectedReceptacles,
