@@ -2,25 +2,27 @@ import OpenAI from 'openai'
 
 const openai = new OpenAI()
 
-export async function getVisionResponse(imageUrl: string): Promise<string> {
+export async function getVisionResponse(imageUrl: string) {
   const response = await openai.chat.completions.create({
     model: 'gpt-4-vision-preview',
     messages: [
       {
+        role: 'system',
+        content: 'You are a helpful program that assists users in identifying the compostability and recyclability of the objects in their images. Respond to the user with a terse explanation of which receptacle the object belongs in, with brief decomposition instructions as necessary.'
+      },
+      {
         role: 'user',
         content: [
-          { type: 'text', text: 'Identify the object that this image focuses on. Then give me a descriptive explanation on how and where to dispose of it' },
           {
             type: 'image_url',
             image_url: {
-              'url': imageUrl,
-              'detail': 'auto'
-            },
-          },
-        ],
-      },
-    ],
-  });
+              'url': imageUrl
+            }
+          }
+        ]
+      }
+    ]
+  })
 
-  return response.choices[0].message[0].content[0].text
+  return { message: response.choices[0].message.content }
 }
