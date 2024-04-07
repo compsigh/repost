@@ -1,16 +1,20 @@
 'use server'
 
 import { put } from '@vercel/blob'
+import { getVisionResponse } from './openai'
 
-export async function handleUploadServerAction(formData: FormData) {
+export async function handleUploadServerAction(
+  prevState: any, formData: FormData
+) {
   const rawFormData = {
     file: formData.get('file') as File
   }
 
-  const blob = await put(rawFormData.file.name, rawFormData.file, {
-    access: 'public'
-  })
+  const blob = await put(
+    rawFormData.file.name,
+    rawFormData.file,
+    { access: 'public' }
+  )
 
-  const blobResponse = Response.json(blob)
-  console.log(blobResponse)
+  return await getVisionResponse(blob.url)
 }
