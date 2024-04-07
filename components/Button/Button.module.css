@@ -9,7 +9,6 @@ button.cta {
   font-weight: 590;
   font-size: 32px;
   text-align: center;
-  /* move the button 72 pixel above the bottom of the viewport */
   position: fixed;
   bottom: 72px;
 }
