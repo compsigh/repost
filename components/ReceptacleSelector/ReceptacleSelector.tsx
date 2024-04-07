@@ -52,9 +52,6 @@ export function ReceptacleSelector() {
       >
         <Image src={RecycleBin} alt="Recycle Bin" width={45} height={65}/>
       </button>
-
-      <p>State:</p>
-      <pre>{JSON.stringify(selectedReceptacles, null, 2)}</pre>
     </>
   )
 }
