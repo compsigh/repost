@@ -9,16 +9,19 @@ import styles from './ReceptacleSelector.module.css'
 
 export function ReceptacleSelector() {
   const [selectedReceptacles, setSelectedReceptacles] = useState({
-    trash: false,
+    recycle: false,
     compost: false,
-    recycle: false
+    trash: false,
   })
 
-  function handleButtonClick(type) {
-    if (!selectedReceptacles[type]) {
+  function handleButtonClick(
+    type: 'recycle' | 'compost' | 'trash'
+) {
+    if (selectedReceptacles[type] === false) {
       document.getElementById(type)?.classList.add('selected')
       document.getElementById('bar')?.classList.add(type)
-    } else {
+    }
+    else {
       document.getElementById(type)?.classList.remove('selected')
       document.getElementById('bar')?.classList.remove(type)
     }
@@ -26,33 +29,30 @@ export function ReceptacleSelector() {
       ...selectedReceptacles,
       [type]: !selectedReceptacles[type]
     })
-
   }
 
   return (
     <>
-      <h1>Select Receptacle Type Options</h1>
-      <button
-        id='trash'
-        onClick={() => handleButtonClick('trash')}
-      >
-        <Image src={TrashBin} alt="Trash Bin" width={45} height={65}/>
-
-      </button>
-
-      <button
-        id='compost'
-        onClick={() => handleButtonClick('compost')}
-      >
-        <Image src={CompostBin} alt="Compost Bin" width={45} height={65}/>
-      </button>
-
-      <button
-        id='recycle'
-        onClick={() => handleButtonClick('recycle')}
-      >
-        <Image src={RecycleBin} alt="Recycle Bin" width={45} height={65}/>
-      </button>
+      <div id={styles.container}>
+        <button
+          id="trash"
+          onClick={() => handleButtonClick('trash')}
+        >
+          <Image src={TrashBin} alt="Trash Bin" width={45} height={65} />
+        </button>
+        <button
+          id="compost"
+          onClick={() => handleButtonClick('compost')}
+        >
+          <Image src={CompostBin} alt="Compost Bin" width={45} height={65} />
+        </button>
+        <button
+          id="recycle"
+          onClick={() => handleButtonClick('recycle')}
+        >
+          <Image src={RecycleBin} alt="Recycle Bin" width={45} height={65}/>
+        </button>
+      </div>
     </>
   )
 }
