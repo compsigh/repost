@@ -4,6 +4,7 @@ import { list } from '@vercel/blob'
 
 export default async function Home() {
   const response = await list()
+  console.log(response)
   return (
     <>
       <h1>How to deploy to production on Vercel 😃</h1>
