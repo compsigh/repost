@@ -31,9 +31,9 @@ export function Logo() {
   return (
     <>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
-        <path d={recycle} fill="none" stroke="#2A88EC" stroke-width="30" stroke-linejoin="round"/>
-        <path d={compost} fill="none" stroke="#000" stroke-width="30" stroke-linejoin="round"/>
-        <path d={trash} fill="none" stroke="#00C774" stroke-width="30" stroke-linejoin="round"/>
+        <path d={recycle} fill="none" stroke="#2A88EC" strokeWidth="30" strokeLinejoin="round" />
+        <path d={compost} fill="none" stroke="#000" strokeWidth="30" strokeLinejoin="round" />
+        <path d={trash} fill="none" stroke="#00C774" strokeWidth="30" strokeLinejoin="round" />
       </svg>
     </>
   )
