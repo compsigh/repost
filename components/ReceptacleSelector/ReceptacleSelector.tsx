@@ -1,9 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-// import TrashIcon from './TrashIcon.svg'
-// import CompostIcon from './CompostIcon.svg'
-// import RecycleIcon from './RecycleIcon.svg'
+import Image from 'next/image'
+import TrashBin from '/svgs/TrashBin.svg'
+import CompostBin from '/svgs/CompostBin.svg'
+import RecycleBin from '/svgs/RecyclingBin.svg'
 
 export function ReceptacleSelector() {
   const [selectedReceptacles, setSelectedReceptacles] = useState({
@@ -32,24 +33,21 @@ export function ReceptacleSelector() {
         id='trash'
         onClick={() => handleButtonClick('trash')}
       >
-        {/* <img src={TrashIcon} alt="Trash Icon" /> */}
-        Trash Bin
+        <Image src={TrashBin} alt="Trash Bin"/>
       </button>
       <br />
       <button
         id='compost'
         onClick={() => handleButtonClick('compost')}
       >
-        {/* <img src={CompostIcon} alt="Compost Icon" /> */}
-        Compost Bin
+        <Image src={CompostBin} alt="Compost Bin"/>
       </button>
       <br />
       <button
         id='recycle'
         onClick={() => handleButtonClick('recycle')}
       >
-        {/* <img src={RecycleIcon} alt="Recycle Icon" /> */}
-        Recycling Bin
+        <Image src={RecycleBin} alt="Recycle Bin"/>
       </button>
       <br />
       <p>State:</p>
