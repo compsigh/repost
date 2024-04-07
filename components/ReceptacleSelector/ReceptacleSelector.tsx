@@ -34,10 +34,11 @@ export function ReceptacleSelector() {
           onClick={() => handleButtonClick('trash')}
         >
           <Image
+            unoptimized
             src={selectedReceptacles.trash ? TrashSelected : TrashDefault}
             alt="Trash Bin"
-            width={70}
-            height={70}
+            width={100}
+            height={100}
           />
         </button>
         <button
@@ -45,10 +46,11 @@ export function ReceptacleSelector() {
           onClick={() => handleButtonClick('compost')}
         >
           <Image
+            unoptimized
             src={selectedReceptacles.compost ? CompostSelected : CompostDefault}
             alt="Compost Bin"
-            width={70}
-            height={70}
+            width={100}
+            height={100}
           />
         </button>
         <button
@@ -56,10 +58,11 @@ export function ReceptacleSelector() {
           onClick={() => handleButtonClick('recycle')}
         >
           <Image
+            unoptimized
             src={selectedReceptacles.recycle ? RecycleSelected : RecycleDefault}
             alt="Recycle Bin"
-            width={70}
-            height={70}
+            width={100}
+            height={100}
           />
         </button>
       </div>
