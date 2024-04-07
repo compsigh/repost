@@ -19,7 +19,6 @@ body {
   max-width: 650px;
   line-height: 1.6;
   font-size: 1.125rem;
-  font-family: var(--font-sans);
 }
 
 @media (max-width: 700px) {
@@ -142,12 +141,33 @@ h2#subtitle {
 
 h1#left-align {
   /* Which bins are near you? */
-  font-family: 'SF Pro';
+  display: flex;
   font-style: normal;
-  font-weight: 700;
-  font-size: 40px;
+  font-weight: bold;
+  font-size: 2.5rem;
   line-height: 48px;
   text-align: left;
   max-width: 64vw;
+  margin-top: 96px;
   margin-left: -18px;
+  margin-bottom: 40px;
+}
+h2#left-align {
+  /* Select the trash cans you have access to right now. */
+  font-style: normal;
+  font-weight: 450;
+  font-size: 1.375rem;
+  line-height: 26px;
+  text-align: left;
+  max-width: 79vw;
+  margin-top: -30px;
+  margin-left: -18px;
+  color: #7F8B97;
+}
+
+span#top-right {
+  /* Have the svg logo be on the same line as h1 */
+  position: absolute;
+  width: 60px;
+  right: 8vw;
 }

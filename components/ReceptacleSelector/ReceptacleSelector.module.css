@@ -2,5 +2,15 @@ div#container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+}
+
+div#row1 {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+div#row2 {
+  display: block;
+  justify-content: center;
+  align-items: center;
 }

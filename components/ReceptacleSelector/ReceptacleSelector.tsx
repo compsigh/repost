@@ -30,42 +30,45 @@ export function ReceptacleSelector() {
   return (
     <>
       <div id={styles.container}>
-        <Button
-          id={styles.trash}
-          onClick={() => handleButtonClick('trash')}
-        >
-          <Image
-            unoptimized
-            src={selectedReceptacles.trash ? TrashSelected : TrashDefault}
-            alt="Trash Bin"
-            width={100}
-            height={100}
-          />
-        </Button>
-        <Button
-          id={styles.compost}
-          onClick={() => handleButtonClick('compost')}
-        >
-          <Image
-            unoptimized
-            src={selectedReceptacles.compost ? CompostSelected : CompostDefault}
-            alt="Compost Bin"
-            width={100}
-            height={100}
-          />
-        </Button>
-        <Button
-          id={styles.recycle}
-          onClick={() => handleButtonClick('recycle')}
-        >
-          <Image
-            unoptimized
-            src={selectedReceptacles.recycle ? RecycleSelected : RecycleDefault}
-            alt="Recycle Bin"
-            width={100}
-            height={100}
-          />
-        </Button>
+        <div id="row1">
+          <Button
+            id={styles.recycle}
+            onClick={() => handleButtonClick('recycle')}
+          >
+            <Image
+              unoptimized
+              src={selectedReceptacles.recycle ? RecycleSelected : RecycleDefault}
+              alt="Recycle Bin"
+              width={100}
+              height={100}
+            />
+          </Button>
+          <Button
+            id={styles.compost}
+            onClick={() => handleButtonClick('compost')}
+          >
+            <Image
+              unoptimized
+              src={selectedReceptacles.compost ? CompostSelected : CompostDefault}
+              alt="Compost Bin"
+              width={100}
+              height={100}
+            />
+          </Button>
+        <div id="row2">
+          <Button
+            id={styles.trash}
+            onClick={() => handleButtonClick('trash')}
+          >
+            <Image
+              unoptimized
+              src={selectedReceptacles.trash ? TrashSelected : TrashDefault}
+              alt="Trash Bin"
+              width={100}
+              height={100}
+            />
+          </Button>
+        </div>
       </div>
     </>
   )

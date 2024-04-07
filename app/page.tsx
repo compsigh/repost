@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { ImageUploader } from '@/components/ImageUploader'
 import { LoadingBar } from '@/components/LoadingBar'
 import { ReceptacleSelector } from '@/components/ReceptacleSelector'
+import { Logo } from '@/components/Logo'
 import wordmark from '@/public/svgs/wordmark.svg'
 import { Button } from '@/components/Button'
 
@@ -39,8 +40,12 @@ function Onboarding() {
 function SelectBins() {
   return (
     <>
-      <h1 id='left-align'>Where bins are near you?</h1>
-      {/* <ReceptacleSelector /> */}
+      <span id='top-right'>
+        <Logo />
+      </span>
+      <h1 id='left-align'>Which bins are near you?</h1>
+      <h2 id='left-align'>Select the trash cans you have access to right now.</h2>
+      <ReceptacleSelector />
     </>
   )
 }
