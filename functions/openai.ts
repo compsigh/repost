@@ -2,7 +2,7 @@ import OpenAI from 'openai'
 
 const openai = new OpenAI()
 
-export async function getVisionResponse(base64Image: string) {
+export async function getVisionResponse(imageUrl: string): Promise<string> {
   const response = await openai.chat.completions.create({
     model: 'gpt-4-vision-preview',
     messages: [
@@ -13,13 +13,14 @@ export async function getVisionResponse(base64Image: string) {
           {
             type: 'image_url',
             image_url: {
-              'url': `data:image/png;base64,${base64Image}`,
+              'url': imageUrl,
               'detail': 'auto'
             },
           },
         ],
       },
     ],
-  })
-  console.log(response.choices[0])
+  });
+
+  return response.choices[0].message[0].content[0].text
 }
