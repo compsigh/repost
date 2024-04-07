@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import RecycleBin from '@/public/svgs/RecyclingBin.svg'
+import RecycleBin from '@/public/svgs/RecycleBin.svg'
 import CompostBin from '@/public/svgs/CompostBin.svg'
 import TrashBin from '@/public/svgs/TrashBin.svg'
 import styles from './ReceptacleSelector.module.css'
@@ -38,19 +38,34 @@ export function ReceptacleSelector() {
           id="trash"
           onClick={() => handleButtonClick('trash')}
         >
-          <Image src={TrashBin} alt="Trash Bin" width={45} height={65} />
+          <Image
+            src={TrashBin}
+            alt="Trash Bin"
+            width={70}
+            height={70}
+          />
         </button>
         <button
           id="compost"
           onClick={() => handleButtonClick('compost')}
         >
-          <Image src={CompostBin} alt="Compost Bin" width={45} height={65} />
+          <Image
+            src={CompostBin}
+            alt="Compost Bin"
+            width={70}
+            height={70}
+          />
         </button>
         <button
           id="recycle"
           onClick={() => handleButtonClick('recycle')}
         >
-          <Image src={RecycleBin} alt="Recycle Bin" width={45} height={65}/>
+          <Image
+            src={RecycleBin}
+            alt="Recycle Bin"
+            width={70}
+            height={70}
+          />
         </button>
       </div>
     </>
