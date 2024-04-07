@@ -82,13 +82,10 @@ input {
 /* recycle button  */
 button {
   padding: 0.5em 1em;
-  outline: 2px #141414;
-  background-color: #d5d5d5;
   font-family: var(--font-sans);
-  color: white;
-  border: 0;
+  color: #141414;
+  border: 3px solid #141414;
   border-radius: 8px;
-  border-color: #141414;
   cursor: pointer;
 }
 
@@ -97,28 +94,35 @@ button:active {
   transform: scale(0.95);
 }
 
-button.tSelected {
-  background-color: #14141445;
+button.selected#trash {
+  background-color: #14141499;
+  color: #f5f5f5;
 }
 
-button.recycle {
-  background-color: var(--color-recycle);
+button#recycle {
+  border-color: var(--color-recycle);
 }
 
-button.recycle:active {
+button#recycle:active {
   background-color: var(--color-recycle);
   transform: scale(0.95);
 }
 
-button.compost {
-  background-color: var(--color-compost);
+button.selected#recycle {
+  background-color: #2A88EC99;
+  color: #f5f5f5;
 }
 
-button.compost:active {
+button#compost {
+  border-color: var(--color-compost);
+}
+
+button#compost:active {
   background-color: var(--color-compost);
   transform: scale(0.95);
 }
 
-/* button.cSelected {
-  background-color: var(#00c77445);
-} */
+button.selected#compost {
+  background-color: #00C77499;
+  color: #f5f5f5;
+}

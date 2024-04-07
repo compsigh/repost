@@ -9,10 +9,15 @@ export function ReceptacleSelector() {
   const [selectedReceptacles, setSelectedReceptacles] = useState({
     trash: false,
     compost: false,
-    recycling: false
+    recycle: false
   })
 
   function handleButtonClick(type) {
+    if (!selectedReceptacles[type]) {
+      document.getElementById(type)?.classList.add('selected')
+    } else {
+      document.getElementById(type)?.classList.remove('selected')
+    }
     setSelectedReceptacles({
       ...selectedReceptacles,
       [type]: !selectedReceptacles[type]
@@ -24,16 +29,15 @@ export function ReceptacleSelector() {
     <>
       <h1>Select Receptacle Type Options</h1>
       <button
-        className='trash'
+        id='trash'
         onClick={() => handleButtonClick('trash')}
-
       >
         {/* <img src={TrashIcon} alt="Trash Icon" /> */}
         Trash Bin
       </button>
       <br />
       <button
-        className='compost'
+        id='compost'
         onClick={() => handleButtonClick('compost')}
       >
         {/* <img src={CompostIcon} alt="Compost Icon" /> */}
@@ -41,8 +45,8 @@ export function ReceptacleSelector() {
       </button>
       <br />
       <button
-        className='recycle'
-        onClick={() => handleButtonClick('recycling')}
+        id='recycle'
+        onClick={() => handleButtonClick('recycle')}
       >
         {/* <img src={RecycleIcon} alt="Recycle Icon" /> */}
         Recycling Bin
