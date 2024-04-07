@@ -1,0 +1,13 @@
+button.cta {
+  display: block;
+  margin: 0 auto;
+  max-width: 650px;
+  min-width: 300px;
+  height: 82px;
+  background: #000000;
+  color: #FFFFFF;
+  border-radius: 30px;
+  font-weight: 590;
+  font-size: 32px;
+  text-align: center;
+}

@@ -9,6 +9,7 @@ import RecycleSelected from '@/public/svgs/ReceptacleSelector-Recycle-Selected.s
 import TrashDefault from '@/public/svgs/ReceptacleSelector-Trash-Default.svg'
 import TrashSelected from '@/public/svgs/ReceptacleSelector-Trash-Selected.svg'
 import styles from './ReceptacleSelector.module.css'
+import { Button } from '@/components/Button'
 
 export function ReceptacleSelector() {
   const [selectedReceptacles, setSelectedReceptacles] = useState({
@@ -29,7 +30,7 @@ export function ReceptacleSelector() {
   return (
     <>
       <div id={styles.container}>
-        <button
+        <Button
           id={styles.trash}
           onClick={() => handleButtonClick('trash')}
         >
@@ -40,8 +41,8 @@ export function ReceptacleSelector() {
             width={100}
             height={100}
           />
-        </button>
-        <button
+        </Button>
+        <Button
           id={styles.compost}
           onClick={() => handleButtonClick('compost')}
         >
@@ -52,8 +53,8 @@ export function ReceptacleSelector() {
             width={100}
             height={100}
           />
-        </button>
-        <button
+        </Button>
+        <Button
           id={styles.recycle}
           onClick={() => handleButtonClick('recycle')}
         >
@@ -64,7 +65,7 @@ export function ReceptacleSelector() {
             width={100}
             height={100}
           />
-        </button>
+        </Button>
       </div>
     </>
   )
