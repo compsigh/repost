@@ -2,9 +2,10 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import TrashBin from '/svgs/TrashBin.svg'
-import CompostBin from '/svgs/CompostBin.svg'
-import RecycleBin from '/svgs/RecyclingBin.svg'
+import RecycleBin from '@/public/svgs/RecyclingBin.svg'
+import CompostBin from '@/public/svgs/CompostBin.svg'
+import TrashBin from '@/public/svgs/TrashBin.svg'
+import styles from './ReceptacleSelector.module.css'
 
 export function ReceptacleSelector() {
   const [selectedReceptacles, setSelectedReceptacles] = useState({
