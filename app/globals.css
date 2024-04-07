@@ -15,7 +15,7 @@
 body {
   color: var(--color-black);
   background-color: var(--color-white);
-  margin: 40px auto;
+  margin: 36px auto;
   max-width: 650px;
   line-height: 1.6;
   font-size: 1.125rem;
@@ -111,4 +111,31 @@ button > img {
 
 #bar.compost {
   background-color: var(--color-compost);
+}
+
+div#wordmark {
+  padding-top: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+h1#title {
+  font-weight: 600;
+}
+
+h1 #compost {
+  color: var(--color-compost);
+}
+
+h1 #recycle {
+  color: var(--color-recycle);
+}
+
+h2#subtitle {
+  font-weight: 400;
 }
