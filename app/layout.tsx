@@ -3,7 +3,6 @@ import { Inter, Work_Sans } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const workSans = Work_Sans({ subsets: ['latin'], variable: '--font-work-sans' })
 
 let metadataBase: URL
 if (process.env.VERCEL_URL) metadataBase = new URL('https://repost.compsigh.club')
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#F5F5F5'
+  themeColor: '#FFFFFF'
 }
 
 export default function RootLayout({
@@ -33,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${workSans.variable}`}
+      className={`${inter.variable}`}
     >
       <body>{children}</body>
     </html>
