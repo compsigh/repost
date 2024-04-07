@@ -15,7 +15,7 @@ export function ReceptacleSelector() {
   const [selectedReceptacles, setSelectedReceptacles] = useState({
     recycle: false,
     compost: false,
-    trash: false,
+    trash: false
   })
 
   function handleButtonClick(
@@ -30,7 +30,7 @@ export function ReceptacleSelector() {
   return (
     <>
       <div id={styles.container}>
-        <div id="row1">
+        <div id={styles.row1}>
           <Button
             id={styles.recycle}
             onClick={() => handleButtonClick('recycle')}
@@ -39,8 +39,8 @@ export function ReceptacleSelector() {
               unoptimized
               src={selectedReceptacles.recycle ? RecycleSelected : RecycleDefault}
               alt="Recycle Bin"
-              width={100}
-              height={100}
+              width={150}
+              height={150}
             />
           </Button>
           <Button
@@ -51,11 +51,12 @@ export function ReceptacleSelector() {
               unoptimized
               src={selectedReceptacles.compost ? CompostSelected : CompostDefault}
               alt="Compost Bin"
-              width={100}
-              height={100}
+              width={150}
+              height={150}
             />
           </Button>
-        <div id="row2">
+        </div>
+        <div id={styles.row2}>
           <Button
             id={styles.trash}
             onClick={() => handleButtonClick('trash')}
@@ -64,8 +65,8 @@ export function ReceptacleSelector() {
               unoptimized
               src={selectedReceptacles.trash ? TrashSelected : TrashDefault}
               alt="Trash Bin"
-              width={100}
-              height={100}
+              width={150}
+              height={150}
             />
           </Button>
         </div>
