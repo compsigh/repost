@@ -8,10 +8,11 @@ import { Button } from '@/components/Button'
 export default async function Home() {
   return (
     <>
-      <Onboarding />
+      {/* <Onboarding /> */}
       {/* <ImageUploader />
       <ReceptacleSelector />
       <LoadingBar /> */}
+      <SelectBins />
     </>
   )
 }
@@ -31,6 +32,15 @@ function Onboarding() {
       <br />
       <h2 id='subtitle'>Now you know.</h2>
       <Button id='get-started' kind='cta'>Sign in</Button>
+    </>
+  )
+}
+
+function SelectBins() {
+  return (
+    <>
+      <h1 id='left-align'>Where bins are near you?</h1>
+      {/* <ReceptacleSelector /> */}
     </>
   )
 }

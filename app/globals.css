@@ -139,3 +139,15 @@ h1 #recycle {
 h2#subtitle {
   font-weight: 400;
 }
+
+h1#left-align {
+  /* Which bins are near you? */
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: left;
+  max-width: 64vw;
+  margin-left: -18px;
+}
