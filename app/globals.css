@@ -79,52 +79,12 @@ input {
   border: 1px solid var(--color-gray);
   border-radius: 8px;
 }
-/* recycle button  */
+
 button {
-  padding: 0.5em 1em;
-  font-family: var(--font-sans);
-  color: #141414;
-  border: 3px solid #141414;
-  border-radius: 8px;
+  padding: 0;
+  border: none;
+  background: none;
   cursor: pointer;
-}
-
-button:active {
-  background-color: #373535;
-  transform: scale(0.95);
-}
-
-button.selected#trash {
-  background-color: #14141499;
-  color: #f5f5f5;
-}
-
-button#recycle {
-  border-color: var(--color-recycle);
-}
-
-button#recycle:active {
-  background-color: var(--color-recycle);
-  transform: scale(0.95);
-}
-
-button.selected#recycle {
-  background-color: #2A88EC99;
-  color: #f5f5f5;
-}
-
-button#compost {
-  border-color: var(--color-compost);
-}
-
-button#compost:active {
-  background-color: var(--color-compost);
-  transform: scale(0.95);
-}
-
-button.selected#compost {
-  background-color: #00c77499;
-  color: #f5f5f5;
 }
 
 #loading-bar {

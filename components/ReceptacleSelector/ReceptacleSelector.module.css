@@ -4,3 +4,15 @@ div#container {
   align-items: center;
   gap: 10px;
 }
+
+button#recycle:active img {
+  content: url('/svgs/ReceptacleSelector-Recycle-Active.svg');
+}
+
+button#compost:active img {
+  content: url('/svgs/ReceptacleSelector-Compost-Active.svg');
+}
+
+button#trash:active img {
+  content: url('/svgs/ReceptacleSelector-Trash-Active.svg');
+}

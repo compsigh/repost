@@ -2,9 +2,12 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import RecycleBin from '@/public/svgs/RecycleBin.svg'
-import CompostBin from '@/public/svgs/CompostBin.svg'
-import TrashBin from '@/public/svgs/TrashBin.svg'
+import CompostDefault from '@/public/svgs/ReceptacleSelector-Compost-Default.svg'
+import CompostSelected from '@/public/svgs/ReceptacleSelector-Compost-Selected.svg'
+import RecycleDefault from '@/public/svgs/ReceptacleSelector-Recycle-Default.svg'
+import RecycleSelected from '@/public/svgs/ReceptacleSelector-Recycle-Selected.svg'
+import TrashDefault from '@/public/svgs/ReceptacleSelector-Trash-Default.svg'
+import TrashSelected from '@/public/svgs/ReceptacleSelector-Trash-Selected.svg'
 import styles from './ReceptacleSelector.module.css'
 
 export function ReceptacleSelector() {
@@ -17,14 +20,6 @@ export function ReceptacleSelector() {
   function handleButtonClick(
     type: 'recycle' | 'compost' | 'trash'
 ) {
-    if (selectedReceptacles[type] === false) {
-      document.getElementById(type)?.classList.add('selected')
-      document.getElementById('bar')?.classList.add(type)
-    }
-    else {
-      document.getElementById(type)?.classList.remove('selected')
-      document.getElementById('bar')?.classList.remove(type)
-    }
     setSelectedReceptacles({
       ...selectedReceptacles,
       [type]: !selectedReceptacles[type]
@@ -35,33 +30,33 @@ export function ReceptacleSelector() {
     <>
       <div id={styles.container}>
         <button
-          id="trash"
+          id={styles.trash}
           onClick={() => handleButtonClick('trash')}
         >
           <Image
-            src={TrashBin}
+            src={selectedReceptacles.trash ? TrashSelected : TrashDefault}
             alt="Trash Bin"
             width={70}
             height={70}
           />
         </button>
         <button
-          id="compost"
+          id={styles.compost}
           onClick={() => handleButtonClick('compost')}
         >
           <Image
-            src={CompostBin}
+            src={selectedReceptacles.compost ? CompostSelected : CompostDefault}
             alt="Compost Bin"
             width={70}
             height={70}
           />
         </button>
         <button
-          id="recycle"
+          id={styles.recycle}
           onClick={() => handleButtonClick('recycle')}
         >
           <Image
-            src={RecycleBin}
+            src={selectedReceptacles.recycle ? RecycleSelected : RecycleDefault}
             alt="Recycle Bin"
             width={70}
             height={70}
